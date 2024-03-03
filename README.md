@@ -1,5 +1,5 @@
 # Intro
-This is a **Java-Swing** based Dropping Bricks Problem game. 
+This is a **Java-Swing** based Dropping Bricks Problem game.
 - You can read a **manual** below to understand the playing flow
 - **Description of methods** to get the understanding of the design and implementation
 - **Game formal model** to grasp the idea of Finite Position Games, backward induction with Knaster-Tarski fix-point theorem.
@@ -7,7 +7,7 @@ This is a **Java-Swing** based Dropping Bricks Problem game.
 
 # Manual
 
-To start the application just compile and run Application class where the main method is located.
+To start the application just compile and run Application class where the main method is located with Java version 17.
 After it, the system will provide some introductory text with the game rules.
 The buttons 'Safe' and 'Broken' will be enabled each time a computer wants to get a response.
 
@@ -39,7 +39,7 @@ Winning agent has 4 more implemented methods:
 2. private boolean canGuess() - returns true if it knows that the next height from the maximum safe height is unsafe
 3. postOrderTraversal(GameNode root, List accumulator) - traverses the tree by adding first children and then the root node to the accumulator list
 4. findAllWinningPositions() - initializes the winning positions as it is stated in the game formal model, uses traversal to order all the nodes and applies dynamic programming to find all the winning positions based on already calculated once
- 
+
 
 
 # Game formal model (FPG)
@@ -50,9 +50,9 @@ The states of the game look as following:
 
 So, the following moves are possible:
 For computer they are: (minSafe, maxSafe, leftDrops, leftBricks) ==> (minSafe, maxSafe, leftDrops, leftBricks, h) where 'h' is between [minSafe+1, maxSafe]
-For user they are: (minSafe, maxSafe, leftDrops, leftBricks, h) ==> 
+For user they are: (minSafe, maxSafe, leftDrops, leftBricks, h) ==>
 - When brick is broken: (minSafe, h-1, leftDrops-1, leftBricks-1) == max safe is now one less then the drop height
 - When brick is safe: (h, maxSafe, leftDrops-1, leftBricks) == min safe is not at least h
 
 Finally, we can arrange the game tree nodes in a list where all the children of a node are placed before the parent. It is possible traversing in post order manner.
-As a solution backward induction is applied, i.e. going from the initial states: (h, h, d, b) where 'h' is in [1..H], d in [0..D], b in [0,1,2] to their parents marking a parent which have a move by dropping from some h to both children being in winning positions.  
+As a solution backward induction is applied, i.e. going from the initial states: (h, h, d, b) where 'h' is in [1..H], d in [0..D], b in [0,1,2] to their parents marking a parent as winning if it has a move by dropping from some h to both children being in winning positions.  
