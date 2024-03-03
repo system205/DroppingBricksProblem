@@ -129,11 +129,11 @@ public class BrickDropInterface extends JFrame {
             You need to choose the number from 1 to %d and bear it in mind. 
             It will be the strength of each brick
             My goal is to guess this number by dropping bricks (I have 2 of them)
-            Also, you should specify maximum number of such drops 
+            Also, you should specify maximum number of such drops from 0 to %d
             and what strategy I should take (random or winning)
             During the game I drop one brick and ask you to reply whether the brick was safe or broken
             I hope you understood the rules. Let's play
-            Wish you lots of fun 😁%n%n""".formatted(height);
+            Wish you lots of fun 😁%n%n""".formatted(height, height);
     }
 
     /**
