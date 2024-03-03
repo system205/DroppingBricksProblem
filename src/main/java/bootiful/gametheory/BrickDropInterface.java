@@ -125,10 +125,12 @@ public class BrickDropInterface extends JFrame {
         return """
             Hello my dear friend! 👋
             I welcome you to play the Dropping Bricks Problem game%n
-            Here is the description 📝 of the game:
-            You need to choose the number 🔢 from 1 to %d and bear it in mind. It will be the strength 💪 of each brick
+            Here is the description  of the game:
+            You need to choose the number from 1 to %d and bear it in mind. 
+            It will be the strength of each brick
             My goal is to guess this number by dropping bricks (I have 2 of them)
-            Also, you should specify maximum number of such drops and what strategy I should take (random or winning)
+            Also, you should specify maximum number of such drops 
+            and what strategy I should take (random or winning)
             During the game I drop one brick and ask you to reply whether the brick was safe or broken
             I hope you understood the rules. Let's play
             Wish you lots of fun 😁%n%n""".formatted(height);
